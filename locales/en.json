@@ -1,0 +1,21 @@
+{
+  "menu_title": "🏠 **Main Menu**",
+  "menu_search": "🔍  Find APK",
+  "menu_history": "📦  History",
+  "menu_settings": "⚙️  Settings",
+  "menu_about": "ℹ️  About",
+  "menu_admin": "🛡️  Admin",
+  "menu_profile": "👤  Profile",
+  "search_prompt": "🔍 **Find APK**\n\nFormat: `package.name version`\n\nExample: `com.spotify.music 9.1.92.3058`\nMulti: `com.a 1.0, com.b 2.0`",
+  "no_result": "❌ `{pkg}` not found.",
+  "wait": "⏳ Wait `{s}s`.",
+  "queue_full": "⏳ Queue full, retry later.",
+  "confirm_patch": "Patch `{pkg}` v`{ver}`?",
+  "yes": "✅ Patch",
+  "no": "❌ Cancel",
+  "settings_title": "⚙️ **Settings**",
+  "lang_switch": "🌐 Language",
+  "theme_switch": "🌗 Theme",
+  "dry_run": "🧪 Dry-run",
+  "banned": "🚫 You are banned from this bot."
+}

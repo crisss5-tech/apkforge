@@ -1,0 +1,24 @@
+{
+  "package": "*",
+  "description": "Template generic — berlaku untuk semua APK yang tidak punya template spesifik",
+  "patches": [
+    {
+      "file_pattern": "smali*/**/*.smali",
+      "method_hint": "isPremium",
+      "find": "const/4 v0, 0x0",
+      "replace": "const/4 v0, 0x1"
+    },
+    {
+      "file_pattern": "smali*/**/*.smali",
+      "method_hint": "isVip",
+      "find": "const/4 v0, 0x0",
+      "replace": "const/4 v0, 0x1"
+    },
+    {
+      "file_pattern": "smali*/**/*.smali",
+      "method_hint": "isPro",
+      "find": "const/4 v0, 0x0",
+      "replace": "const/4 v0, 0x1"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>{{ bot_name }}</title>
+<style>
+:root{--bg:#0a0a0a;--fg:#eee;--acc:#0ff;--card:#111;--bd:#222}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:system-ui;margin:0;padding:20px}
+h1{color:var(--acc);border-bottom:1px solid var(--bd);padding-bottom:12px;margin:0 0 8px}
+.sub{color:#666;font-size:.9em;margin:0 0 20px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:16px;margin:12px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.big{font-size:2.2em;color:var(--acc);font-weight:700}
+.lbl{color:#888;font-size:.85em;text-transform:uppercase;letter-spacing:1px}
+button{background:var(--acc);color:#000;border:0;padding:10px 18px;border-radius:6px;cursor:pointer;font-weight:600}
+button:hover{background:#0cc}
+table{width:100%;border-collapse:collapse;margin-top:12px}
+td{padding:8px;border-bottom:1px solid var(--bd);font-size:.9em}
+tr:last-child td{border-bottom:0}
+.footer{margin-top:40px;text-align:center;color:#444;font-size:.8em}
+</style></head>
+<body>
+<h1>🤖 {{ bot_name }} — Dashboard</h1>
+<div class="sub">v{{ bot_version }} · Owner: {{ bot_owner }}</div>
+<div class="grid">
+  <div class="card"><div class="lbl">Users</div><div class="big" id="users">—</div></div>
+  <div class="card"><div class="lbl">Requests</div><div class="big" id="req">—</div></div>
+  <div class="card"><div class="lbl">Success</div><div class="big" id="ok">—</div></div>
+  <div class="card"><div class="lbl">Banned</div><div class="big" id="ban">—</div></div>
+</div>
+<div class="card">
+  <h3>📦 Cache</h3>
+  <button onclick="clearCache()">🧹 Clear Cache</button>
+  <div id="cache"></div>
+</div>
+<div class="footer">Built with ❤️ by {{ bot_owner }}</div>
+<script>
+async function load(){
+  const s = await (await fetch('/api/stats')).json();
+  users.innerText=s.users||0; req.innerText=s.total_requests||0;
+  ok.innerText=s.ok_requests||0; ban.innerText=s.banned||0;
+  const c = await (await fetch('/api/cache')).json();
+  document.getElementById('cache').innerHTML =
+    '<table>'+c.slice(0,20).map(f=>`<tr><td>${f.name}</td><td>${(f.size/1024).toFixed(1)} KB</td></tr>`).join('')+'</table>';
+}
+async function clearCache(){ await fetch('/api/cache/clear',{method:'POST'}); load(); }
+load(); setInterval(load, 5000);
+</script>
+</body></html>

@@ -1,0 +1,21 @@
+{
+  "menu_title": "🏠 **Menu Utama**",
+  "menu_search": "🔍  Cari APK",
+  "menu_history": "📦  Riwayat",
+  "menu_settings": "⚙️  Pengaturan",
+  "menu_about": "ℹ️  Tentang",
+  "menu_admin": "🛡️  Admin",
+  "menu_profile": "👤  Profil",
+  "search_prompt": "🔍 **Cari APK**\n\nFormat: `nama.paket versi`\n\nContoh: `com.spotify.music 9.1.92.3058`\nMulti: `com.a 1.0, com.b 2.0`",
+  "no_result": "❌ `{pkg}` tidak ditemukan.",
+  "wait": "⏳ Tunggu `{s}s` lagi.",
+  "queue_full": "⏳ Antrian penuh, coba lagi.",
+  "confirm_patch": "Patch `{pkg}` v`{ver}`?",
+  "yes": "✅ Patch",
+  "no": "❌ Batal",
+  "settings_title": "⚙️ **Pengaturan**",
+  "lang_switch": "🌐 Bahasa",
+  "theme_switch": "🌗 Tema",
+  "dry_run": "🧪 Dry-run",
+  "banned": "🚫 Lo diblokir dari bot ini."
+}

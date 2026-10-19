@@ -1,0 +1,18 @@
+{
+  "package": "com.spotify.music",
+  "description": "Spotify local check unlock (butuh verifikasi manual per versi)",
+  "patches": [
+    {
+      "file_pattern": "smali*/**/*.smali",
+      "method_hint": "isPremium",
+      "find": "const/4 v0, 0x0",
+      "replace": "const/4 v0, 0x1"
+    },
+    {
+      "file_pattern": "smali*/**/*.smali",
+      "method_hint": "isVip",
+      "find": "const/4 v0, 0x0",
+      "replace": "const/4 v0, 0x1"
+    }
+  ]
+}
